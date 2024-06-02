@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="mx-auto text-center w-25 mt-5" style="border-radius: 15px; height: 500px;">
+    <div class="bg-transparent" style="position: relative; display: inline-block;">
+        <img [src]="admin.fotoUrl" alt="" class="mt-3" style="height: 200px; width: 200px; border-radius: 50px;">
+        <button [routerLink]="['/editar-perfil-admin']" type="button" class="btn btn-info w-25" style=" position: absolute; top: 90%; left: 90%; transform: translate(-50%, -50%); border-radius: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+          </svg></button>
+      </div>
+      
+    <h2 class="mt-3">Datos personales</h2>
+    <div class="d-flex bg-transparent text-center justify-content-center">
+        <h5>Nombre:</h5>
+        <p class="ms-4">{{admin.name}}</p>
+    </div>
+    <div class="d-flex bg-transparent text-center justify-content-center">
+        <h5>Apellidos:</h5>
+        <p class="ms-4">{{admin.lastName}}</p>
+    </div>
+    <div class="d-flex bg-transparent text-center justify-content-center">
+        <h5 class="ms-5 ">Email:</h5>
+        <p class="ps-3">{{admin.email}}</p>
+    </div>
+    <div class="d-flex bg-transparent text-center justify-content-center">
+        <h5>Numero de telfono:</h5>
+        <p class="ms-4">{{admin.phoneNumber}}</p>
+    </div>
+
+</div>

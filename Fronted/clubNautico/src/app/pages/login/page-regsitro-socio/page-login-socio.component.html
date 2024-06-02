@@ -1,0 +1,94 @@
+
+<div class="welcome-message">
+    <h1>Bienvenido al Club Náutico</h1>
+    <p>Disfruta de una experiencia única en nuestro club.</p>
+</div>
+
+<div class="container">
+    <div *ngIf="errorMessage" class="alert alert-danger text-center w-50 mx-auto" role="alert">
+        {{errorMessage}}
+    </div>
+
+    <div class="mx-auto w-100 text-center" style="border-radius: 15px;">
+        <h2 class="mt-4">Registro de Socio</h2>
+    </div>
+
+    <form [formGroup]="profileLogin" (ngSubmit)="register()">
+        <div class="mx-auto text-center w-75 mt-3" style="border-radius: 15px;">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{'is-invalid': profileLogin.controls.name.invalid && profileLogin.controls.name.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="lastName" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName" [ngClass]="{'is-invalid': profileLogin.controls.lastName.invalid && profileLogin.controls.lastName.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="username" class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="username" formControlName="username" [ngClass]="{'is-invalid': profileLogin.controls.username.invalid && profileLogin.controls.username.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="phoneNumber" class="form-label">Número de teléfono</label>
+                        <input type="text" class="form-control" id="phoneNumber" maxlength="9" size="5" formControlName="phoneNumber" [ngClass]="{'is-invalid': profileLogin.controls.phoneNumber.invalid && profileLogin.controls.phoneNumber.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': profileLogin.controls.email.invalid && profileLogin.controls.email.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bg-transparent">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{'is-invalid': profileLogin.controls.password.invalid && profileLogin.controls.password.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="bg-transparent">
+                        <label for="fotoUrl" class="form-label">URL de la foto de perfil</label>
+                        <input type="text" class="form-control" id="fotoUrl" formControlName="fotoUrl" [ngClass]="{'is-invalid': profileLogin.controls.fotoUrl.invalid && profileLogin.controls.fotoUrl.touched}">
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary w-100" [disabled]="profileLogin.invalid">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="d-flex justify-content-center mt-3">
+        <button [routerLink]="['/login-socio']" class="btn btn-info mr-4">¿Ya tienes una cuenta?</button>
+        <button [routerLink]="['/login']" class="btn btn-admin">Acceder como Administrador</button>
+    </div>
+</div>

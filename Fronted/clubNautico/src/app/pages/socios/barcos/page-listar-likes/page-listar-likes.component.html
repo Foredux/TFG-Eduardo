@@ -1,0 +1,16 @@
+<app-header-socio></app-header-socio>
+
+<div class="container mt-3">
+  <div *ngFor="let barco of verLikes" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ barco.nombre }}</h5>
+      <p class="card-text">Matrícula: {{ barco.matricula }}</p>
+      <p class="card-text">Cuota: {{ barco.cuota }}€</p>
+      <p class="card-text">Número de Amarre: {{ barco.numeroAmarre }}</p>
+      <button *ngIf="!barco.likes" (click)="asignarBarco(barco.uuid)" type="button" class="btn btn-primary">Asignar</button>
+      <button *ngIf="barco.likes" (click)="quitarLike(barco.uuid)" type="button" class="btn btn-danger">Quitar like</button>
+    </div>
+  </div>
+</div>
+
+

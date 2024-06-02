@@ -1,0 +1,28 @@
+<div *ngIf="errorMessage" class="alert alert-danger text-center w-50 mx-auto" role="alert">
+    {{errorMessage}}
+  </div>
+  <div class="mx-auto w-25" style="border-radius: 15px;">
+
+    <h2 class="text-center mt-4">Editar perfil</h2></div>
+<form [formGroup]="profileLogin"  (ngSubmit)="editarPerfil()">
+    <div class="mx-auto text-center w-50 mt-5" style="border-radius: 15px; height: 400px;">
+
+        <label for="fotoUrl" class="form-label">Foto de perfil</label>
+              <input type=" number" class="form-control w-75 mx-auto" id="fotoUrl" aria-describedby="fotoUrl" formControlName="fotoUrl">
+        
+            <label for="name" class="form-label mt-4">Nombre</label>
+            <input type="text" class="form-control w-75 mx-auto" id="name" aria-describedby="name" formControlName="name">
+        
+            
+        
+          
+              <label for="lastName" class="form-label">Apellidos</label>
+              <input type="text" class="form-control w-75 mx-auto" id="lastName" aria-describedby="lastName" formControlName="lastName">
+          
+    
+        
+          <button type="submit" class="btn btn-primary mt-3 w-50">Submit</button>
+    </div>
+    
+  </form>
+  

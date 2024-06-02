@@ -1,0 +1,20 @@
+<div class="mx-auto w-25 " style="border-radius: 15px;">
+    <h2 class="text-center mt-4">Crear Salida</h2>
+</div>
+<form [formGroup]="profileLogin"  (ngSubmit)="login()">
+    <div class="mx-auto text-center w-50 mt-5 " style="border-radius: 15px; height: 230px; ">
+    <div class="mb-3 bg-transparent w-75 mx-auto">
+      <label for="destino" class="form-label ">Destino</label>
+      <input type="text" class="form-control" id="destino" aria-describedby="destino" formControlName="destino">
+  
+      
+    </div>
+    <div class="mb-3 bg-transparent w-75 mx-auto">
+      <label for="nombrePatron" class="form-label">Nombre patron</label>
+      <input type="text" class="form-control" id="nombrePatron" formControlName="nombrePatron">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  

@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let barco of listadoSocios">
+      <div class="card mb-4">
+        <img [src]="barco.fotoUrl" class="card-img-top" alt="Foto de {{barco.name}}" style="height: 150px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{barco.name}} {{barco.lastName}}</h5>
+          <p class="card-text"><strong>Email:</strong> {{barco.email}}</p>
+          <p class="card-text"><strong>Barcos asociados:</strong> {{barco.barcos.length}}</p>
+          <p class="card-text"><strong>Número de teléfono:</strong> {{barco.phoneNumber}}</p>
+          <button (click)="eliminarSocio(barco.id)" type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

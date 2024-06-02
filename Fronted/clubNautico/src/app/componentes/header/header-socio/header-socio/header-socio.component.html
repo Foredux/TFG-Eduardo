@@ -1,0 +1,29 @@
+<nav class=" navbar  ">
+    <div class="container-fluid mx-auto">
+      <a [routerLink]="['/home-page-socio']" class="navbar-brand" href="#"> <img src="https://th.bing.com/th/id/OIP.oRWOf9h8BmZIM6Ei7zMSaQHaHa?w=192&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" style="height: 70px; width: 70px; border-radius: 50px;"></a>
+      <ul class="nav justify-content-center mx-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/barcos-disponibles']" class="nav-link active text-dark" aria-current="page" href="#">Ver barcos</a>
+        </li>
+        <li class="nav-item" *ngIf="socioLogued.barcos.length > 0">
+            <a [routerLink]="['/crear-salida']" class="nav-link text-dark" href="#">Crear salida</a>
+        </li>
+        
+        <li class="nav-item">
+          <a [routerLink]="['/likes']" class="nav-link text-dark" href="#">Ver tus barcos favoritos</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="logOut()" [routerLink]="['/registro-socio']" class="nav-link text-dark" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+          </svg></a>
+        </li>
+      </ul>
+      <img [routerLink]="['/ver-perfil']"  [src]="socioLogued.fotoUrl" alt="" style="height: 70px; width: 70px; border-radius: 50px;">
+      <button  type="submit" class="btn btn-info " ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
+      </svg>{{socioLogued.saldo}} €</button>
+    </div>
+    
+    
+  </nav>
